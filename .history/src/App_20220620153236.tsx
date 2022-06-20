@@ -12,6 +12,7 @@ function App() {
         Simple React Typescript Tailwind Sample
       </h1>
     </>
+    
   );  
 }
 

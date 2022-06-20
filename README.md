@@ -1,46 +1,58 @@
-# Getting Started with Create React App
+# Mealkipedia_Recipe APP
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- [설계](#설계)
+- [기능](#기능)
+- [구현](#구현)
+- [트러블 슈팅](#트러블-슈팅)
 
-## Available Scripts
+## 설계
 
-In the project directory, you can run:
+### 목표
 
-### `npm start`
+- `TypeScript` 와 `React`를 사용해 레시피앱 만들기
+- ['TheMealDB' api](https://www.themealdb.com/) 사용
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### 사용
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+| -             | Link                                          |
+| ------------- | --------------------------------------------- |
+| Lang          | [TypeScript](https://www.typescriptlang.org/) |
+| Web Framework | [React](https://reactjs.org/)                 |
+| CSS framework | [tailwind](https://tailwindcss.com/)          |
 
-### `npm test`
+### 공부 필요
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- react에 tailwind 적용하는 법
+  - [Tailwind CSS with Create React App](https://tailwindcss.com/docs/guides/create-react-app)
+- react + typescript
 
-### `npm run build`
+### 레이아웃
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Main page
+  ![mealkipedia_main](https://user-images.githubusercontent.com/69047256/174443744-e6f0d864-346a-45f7-ad9b-9e9dc7ea1299.PNG)
+- Search page
+  ![mealkipedia_search](https://user-images.githubusercontent.com/69047256/174443769-221afeee-af51-40e1-9660-54d652376225.PNG)
+- Recipe page
+  ![mealkipedia_recipe](https://user-images.githubusercontent.com/69047256/174443779-d10fafdb-4ad5-43ad-82f7-de9dafe88e04.PNG)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 기능
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 반응형
 
-### `npm run eject`
+TBD
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### 레시피 검색
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+TBD
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## 구현
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+TBD
 
-## Learn More
+## 트러블 슈팅
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+TBD
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 참고 소스
+
+TBD
