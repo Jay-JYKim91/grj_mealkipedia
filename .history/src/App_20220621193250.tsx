@@ -8,6 +8,13 @@ import Search from './page/search';
 // import MealDBFetch from './services/mealDB';
 
 const App: React.FC = () => {
+  // const recommendation = async () => {
+  //   const meal = new MealDBFetch();
+  //   return await meal.randomRecipe();
+
+  // }
+  // console.log(recommendation);
+
   return (
     <>
       <Header />

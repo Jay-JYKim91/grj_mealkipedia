@@ -1,13 +1,13 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
-import Footer from './component/footer';
-import Header from './component/header';
-import Home from './page/home';
-import Recipe from './page/recipe';
-import Search from './page/search';
-// import MealDBFetch from './services/mealDB';
+import Footer from './component/footer/footer';
+import Header from './component/header/header';
+import Home from './pages/home/home';
+import Recipe from './pages/recipe/recipe';
+import Search from './pages/search/search';
 
 const App: React.FC = () => {
+
   return (
     <>
       <Header />

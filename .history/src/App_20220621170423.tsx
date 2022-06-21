@@ -2,12 +2,19 @@ import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import Footer from './component/footer';
 import Header from './component/header';
-import Home from './page/home';
-import Recipe from './page/recipe';
-import Search from './page/search';
-// import MealDBFetch from './services/mealDB';
+import Home from './component/home';
+import Recipe from './component/recipe';
+import Search from './component/search';
+import MealDBFetch from './services/mealDB';
 
 const App: React.FC = () => {
+  const recommendation: Promise<void> = async () => {
+    const meal = new MealDBFetch();
+    return await meal.randomRecipe();
+
+  }
+  console.log(recommendation);
+
   return (
     <>
       <Header />
