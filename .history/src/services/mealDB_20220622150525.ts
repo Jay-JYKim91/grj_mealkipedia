@@ -18,7 +18,7 @@ export async function fetchRandomRecipe() {
                 ingredients.push(data.meals[0][`strIngredient${i}`]);
             }
         }
-
+        
         let tags: string[] = [];
         if (data.meals[0]['strTags']) {
             tags = data.meals[0]['strTags'].split(',');
@@ -33,8 +33,6 @@ export async function fetchRandomRecipe() {
         }
         
         return recipe;
-    } else {
-        return;
     }
 }
 // class MealDBFetch {

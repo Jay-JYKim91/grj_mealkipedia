@@ -36,10 +36,14 @@ const RecommendationRecipe: React.FC = () => {
                 <img src={recipe.imageURL} alt={recipe.title}
                     className="lg:pr-4 max-w-xs max-h-xs" />
                 <div className="py-4 flex flex-wrap justify-between">
-                    <Tag type='area' content={recipe.area}/>
-                    {recipe.tags && recipe.tags.map((tag) => {
-                        return <Tag type='tag' content={tag} />
-                    })}
+                    <Tag type='type' content={recipe.area}/>
+                    <Tag type='type' />
+                    <Tag type='type' />
+                    <Tag type='type' />
+                    <Tag type='type' />
+                    <Tag type='type' />
+
+                    <h2>{recipe.area}</h2>
                     
                     {/* <div> */}
                         {recipe.ingredients.map((ingredient) => {

@@ -10,7 +10,6 @@ export async function fetchRandomRecipe() {
     const res = await fetch(`https://www.themealdb.com/api/json/v1/1/random.php`);
     if (res.ok) {
         let data = await res.json();
-
         let ingredients: string[] = [];
         for (let i = 1; i < 21; i++) {
             let processed = data.meals[0][`strIngredient${i}`];
@@ -18,7 +17,6 @@ export async function fetchRandomRecipe() {
                 ingredients.push(data.meals[0][`strIngredient${i}`]);
             }
         }
-
         let tags: string[] = [];
         if (data.meals[0]['strTags']) {
             tags = data.meals[0]['strTags'].split(',');
@@ -33,8 +31,6 @@ export async function fetchRandomRecipe() {
         }
         
         return recipe;
-    } else {
-        return;
     }
 }
 // class MealDBFetch {

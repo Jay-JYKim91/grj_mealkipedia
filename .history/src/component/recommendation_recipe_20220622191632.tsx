@@ -38,7 +38,7 @@ const RecommendationRecipe: React.FC = () => {
                 <div className="py-4 flex flex-wrap justify-between">
                     <Tag type='area' content={recipe.area}/>
                     {recipe.tags && recipe.tags.map((tag) => {
-                        return <Tag type='tag' content={tag} />
+                        return <Tag type='type' content={tag} />
                     })}
                     
                     {/* <div> */}
