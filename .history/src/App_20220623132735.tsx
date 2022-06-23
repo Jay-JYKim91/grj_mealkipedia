@@ -8,37 +8,26 @@ import Search from './page/search';
 import * as apiMeals from './services/mealDB';
 
 const App: React.FC = () => {
-    const [defaultRecipe, setDefaultRecipe] = useState<apiMeals.RecipeType>({
-          id: '',
-          title: '',
-          imageURL: '',
-          area: '',
-          tags: [],
-          instruction: ''
+  const [recipe, setRecipe] = useState<apiMeals.RecipeType>
+    ({
+        title: '',
+        imageURL: '',
+        area: '',
+        tags: [],
+        ingredients: []
     });
-
-    const [recipes, setRecipes] = useState([]);
-    
-    const onSearch = (query: string): [] => {
-      apiMeals.searchRecipe(query).then((data) =>{
-        setRecipes(data);
-      })
-
-      return recipes;
-    } 
 
     useEffect(() => {
         apiMeals.fetchRandomRecipe()
             .then((data) => {
                 data = data! as apiMeals.RecipeType;
                 
-                setDefaultRecipe({
-                    id: data.id,
+                setRecipe({
                     title: data.title,
                     imageURL: data.imageURL,
                     area: data.area,
                     tags: data.tags,
-                    instruction: data.instruction
+                    ingredients: data.ingredients
                 })
             })
     }, [])
@@ -50,15 +39,11 @@ const App: React.FC = () => {
         <Routes>
           <Route path='/' element={
             <Home 
-              title={defaultRecipe.title} imageURL={defaultRecipe.imageURL} area={defaultRecipe.area}
-              tags={defaultRecipe.tags} instruction={defaultRecipe.instruction} id={defaultRecipe.id}
-              onSearch={onSearch} />
+              title={recipe.title} imageURL={recipe.imageURL} area={recipe.area}
+              tags={recipe.tags} ingredients={recipe.ingredients} />
           } />
           <Route path='search' element={
-            <Search 
-              onSearch={onSearch}
-              title={defaultRecipe.title} imageURL={defaultRecipe.imageURL} area={defaultRecipe.area}
-              tags={defaultRecipe.tags} instruction={defaultRecipe.instruction} id={defaultRecipe.id} />
+            <Search />
           } />
           <Route path='recipe' element={
             <Recipe />

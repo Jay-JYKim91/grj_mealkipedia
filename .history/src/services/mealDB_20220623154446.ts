@@ -6,7 +6,7 @@ export type RecipeType = {
     tags?: string[],
     ingredients?: string[],
     instruction: string,
-    // onSearch?: (query: string) => []
+    onSearch?: (query: string) => []
 }
 
 export async function fetchRandomRecipe() {

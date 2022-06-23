@@ -1,31 +1,32 @@
 import React, { useState, useEffect } from 'react';
-import * as apiMeals from '../services/mealDB';
+import { RecipeType } from '../services/mealDB';
+// import * as apiMeals from '../services/mealDB';
 import Tag from './tag';
 
-const RecommendationRecipe: React.FC = () => {
-    const [recipe, setRecipe] = useState<apiMeals.RecipeType>
-    ({
-        title: '',
-        imageURL: '',
-        area: '',
-        tags: [],
-        ingredients: []
-    });
+const RecommendationRecipe: React.FC<RecipeType> = () => {
+    // const [recipe, setRecipe] = useState<apiMeals.RecipeType>
+    // ({
+    //     title: '',
+    //     imageURL: '',
+    //     area: '',
+    //     tags: [],
+    //     ingredients: []
+    // });
 
-    useEffect(() => {
-        apiMeals.fetchRandomRecipe()
-            .then((data) => {
-                data = data! as apiMeals.RecipeType;
+    // useEffect(() => {
+    //     apiMeals.fetchRandomRecipe()
+    //         .then((data) => {
+    //             data = data! as apiMeals.RecipeType;
                 
-                setRecipe({
-                    title: data.title,
-                    imageURL: data.imageURL,
-                    area: data.area,
-                    tags: data.tags,
-                    ingredients: data.ingredients
-                })
-            })
-    }, [])
+    //             setRecipe({
+    //                 title: data.title,
+    //                 imageURL: data.imageURL,
+    //                 area: data.area,
+    //                 tags: data.tags,
+    //                 ingredients: data.ingredients
+    //             })
+    //         })
+    // }, [])
 
     return (
         <div className="px-6 md:px-9 lg:px-12 py-6 lg:py-12">

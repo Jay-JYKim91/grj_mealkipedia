@@ -5,8 +5,7 @@ export type RecipeType = {
     area: string,
     tags?: string[],
     ingredients?: string[],
-    instruction: string,
-    // onSearch?: (query: string) => []
+    instruction: string
 }
 
 export async function fetchRandomRecipe() {
@@ -48,7 +47,7 @@ export async function searchRecipe(query: string) {
     if (res.ok) {
         let data = await res.json();
         
-        return data.meals;
+        return data.meals[0];
     } else {
         return;
     }

@@ -55,10 +55,7 @@ const App: React.FC = () => {
               onSearch={onSearch} />
           } />
           <Route path='search' element={
-            <Search 
-              onSearch={onSearch}
-              title={defaultRecipe.title} imageURL={defaultRecipe.imageURL} area={defaultRecipe.area}
-              tags={defaultRecipe.tags} instruction={defaultRecipe.instruction} id={defaultRecipe.id} />
+            <Search onSearch={onSearch} />
           } />
           <Route path='recipe' element={
             <Recipe />

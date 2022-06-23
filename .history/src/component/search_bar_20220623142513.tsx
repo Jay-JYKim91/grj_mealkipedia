@@ -1,0 +1,23 @@
+import React from 'react';
+
+type SearchBarProps = {
+    divStyle: string;
+    inputStyle: string;
+}
+
+const SearchBar: React.FC<SearchBarProps> = ({ divStyle, inputStyle }) => {
+    // flex justify-center lg:justify-end
+    // p-2 lg:p-4 text-2xl font-body1_font rounded-l-lg border-2 border-gray-300
+    return (
+        <div className={divStyle}>
+            <input type="search" 
+                className={inputStyle}
+            />
+            <button className="p-4 bg-gray-300 rounded-r-lg">
+                <img src="./search.png" alt="search" />
+            </button>
+        </div>
+    )
+}
+
+export default SearchBar;

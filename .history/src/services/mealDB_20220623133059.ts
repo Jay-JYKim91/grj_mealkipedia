@@ -1,12 +1,10 @@
 export type RecipeType = {
-    id: string,
     title: string,
     imageURL: string,
     area: string,
     tags?: string[],
     ingredients?: string[],
-    instruction: string,
-    // onSearch?: (query: string) => []
+    instruction: string
 }
 
 export async function fetchRandomRecipe() {
@@ -28,7 +26,6 @@ export async function fetchRandomRecipe() {
         }
 
         const recipe: RecipeType = {
-            id: data.meals[0].idMeal,
             title: data.meals[0].strMeal,
             imageURL: data.meals[0].strMealThumb,
             area: data.meals[0].strArea,
@@ -38,17 +35,6 @@ export async function fetchRandomRecipe() {
         }
         
         return recipe;
-    } else {
-        return;
-    }
-}
-
-export async function searchRecipe(query: string) {
-    const res = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${query}`);
-    if (res.ok) {
-        let data = await res.json();
-        
-        return data.meals;
     } else {
         return;
     }

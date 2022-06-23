@@ -1,5 +1,5 @@
 import React from 'react';
-import DefaultRecipe from '../component/default_recipe';
+import RecommendationRecipe from '../component/recommendation_recipe';
 import SearchBar from '../component/search_bar';
 
 const Search: React.FC = ({ onSearch, title, imageURL, area, instruction, tags, id }) => {
@@ -13,7 +13,7 @@ const Search: React.FC = ({ onSearch, title, imageURL, area, instruction, tags, 
                 buttonStyle="p-2 bg-gray-300 rounded-r-lg"
                 imageStyle="max-h-[30px]" />
             <div>
-                <DefaultRecipe 
+                <RecommendationRecipe 
                     title={title} imageURL={imageURL} area={area}
                     instruction={instruction} tags={tags} id={id} />
             </div>

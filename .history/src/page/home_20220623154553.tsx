@@ -1,5 +1,5 @@
 import React from 'react';
-import DefaultRecipe from '../component/default_recipe';
+import RecommendationRecipe from '../component/recommendation_recipe';
 import SearchBar from '../component/search_bar';
 import { RecipeType } from '../services/mealDB';
 
@@ -17,7 +17,7 @@ const Home: React.FC<RecipeType> = ({ onSearch, title, imageURL, area, instructi
                     inputStyle="p-2 lg:p-4 text-2xl font-body1_font rounded-l-lg border-2 border-gray-300"
                     buttonStyle="p-2 bg-gray-300 rounded-r-lg" />
             </div>
-            <DefaultRecipe 
+            <RecommendationRecipe 
                 title={title} imageURL={imageURL} area={area}
                 instruction={instruction} tags={tags} id={id} />
         </>

@@ -1,8 +1,10 @@
 import React from 'react';
-import DefaultRecipe from '../component/default_recipe';
+import RecommendationRecipe from '../component/recommendation_recipe';
 import SearchBar from '../component/search_bar';
 
-const Search: React.FC = ({ onSearch, title, imageURL, area, instruction, tags, id }) => {
+const Search: React.FC = ({ onSearch }) => {
+        // flex justify-center lg:justify-end
+    // 
 
     return (
         <div className="px-6 md:px-9 lg:px-12 my-6">
@@ -13,9 +15,7 @@ const Search: React.FC = ({ onSearch, title, imageURL, area, instruction, tags, 
                 buttonStyle="p-2 bg-gray-300 rounded-r-lg"
                 imageStyle="max-h-[30px]" />
             <div>
-                <DefaultRecipe 
-                    title={title} imageURL={imageURL} area={area}
-                    instruction={instruction} tags={tags} id={id} />
+                <RecommendationRecipe />
             </div>
         </div>
     )

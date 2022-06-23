@@ -16,15 +16,15 @@ const App: React.FC = () => {
           tags: [],
           instruction: ''
     });
-
-    const [recipes, setRecipes] = useState([]);
     
     const onSearch = (query: string): [] => {
-      apiMeals.searchRecipe(query).then((data) =>{
-        setRecipes(data);
-      })
+      // let recipes: [] = [];
 
-      return recipes;
+      // apiMeals.searchRecipe(query).then((data) =>{
+      //   recipes = data;
+      // })
+
+      // return recipes;
     } 
 
     useEffect(() => {
@@ -55,10 +55,7 @@ const App: React.FC = () => {
               onSearch={onSearch} />
           } />
           <Route path='search' element={
-            <Search 
-              onSearch={onSearch}
-              title={defaultRecipe.title} imageURL={defaultRecipe.imageURL} area={defaultRecipe.area}
-              tags={defaultRecipe.tags} instruction={defaultRecipe.instruction} id={defaultRecipe.id} />
+            <Search onSearch={onSearch} />
           } />
           <Route path='recipe' element={
             <Recipe />
