@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Route, Routes, NavigateFunction, useNavigate } from 'react-router-dom';
+import Footer from './component/footer';
 import Home from './page/home';
 import Recipe from './page/recipe';
 import Search from './page/search';

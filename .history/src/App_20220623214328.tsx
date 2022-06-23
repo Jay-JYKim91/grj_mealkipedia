@@ -1,16 +1,13 @@
 import React, { useEffect, useState } from 'react';
-import { Route, Routes, NavigateFunction, useNavigate } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
+import Footer from './component/footer';
+import Header from './component/header';
 import Home from './page/home';
 import Recipe from './page/recipe';
 import Search from './page/search';
 import * as apiMeals from './services/mealDB';
 
 const App: React.FC = () => {
-    const navigate: NavigateFunction = useNavigate();
-
-    const navigateHome = () => {
-        navigate('/');
-    }
     const [defaultRecipe, setDefaultRecipe] = useState<apiMeals.RecipeType>({
           id: '',
           title: '',
@@ -73,11 +70,7 @@ const App: React.FC = () => {
           } />
         </Routes>
       </main>
-      <footer className="flex flex-col items-center justify-center px-12 py-4 bg-gray-400">
-          <img src="/logo.png" alt="logo" width="100" className="mb-2"/>
-          <p className="font-body2_font">Developed by Juyeon Kim</p>
-          <p>Using <a href="https://www.themealdb.com/">TheMealDB</a></p>
-      </footer>
+      <Footer />
     </>
   );  
 }
