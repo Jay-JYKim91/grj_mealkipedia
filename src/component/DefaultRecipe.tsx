@@ -1,7 +1,7 @@
 import React from 'react';
 import { RecipeType } from '../services/mealDB';
 import { NavigateFunction, useNavigate } from 'react-router-dom';
-import Tag from './tag';
+import Tag from './Tag';
 
 const MAX_WORDS = 40;
 

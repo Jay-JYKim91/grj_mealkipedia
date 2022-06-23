@@ -1,6 +1,6 @@
 import React from 'react';
-import DefaultRecipe from '../component/default_recipe';
-import SearchBar from '../component/search_bar';
+import DefaultRecipe from '../component/DefaultRecipe';
+import SearchBar from '../component/SearchBar';
 
 const Search: React.FC = ({ onSearch, title, imageURL, area, instruction, tags, id }) => {
 
