@@ -1,0 +1,53 @@
+import React from 'react';
+import { RecipeType } from '../services/mealDB';
+import { useQuery } from 'react-query';
+import * as apiMeals from '../services/mealDB';
+import { NavigateFunction, useNavigate } from 'react-router-dom';
+import Tag from './Tag';
+
+const MAX_WORDS = 40;
+
+const TodaysRecipe: React.FC<RecipeType> = ({ 
+    title, imageURL, instruction, area, tags, id 
+}) => {
+    console.log(id);
+    const navigate: NavigateFunction = useNavigate();
+
+    const navigateRecipe = () => {
+        navigate('/search');
+    }
+
+    instruction = (instruction.split(' ').length >= MAX_WORDS) ? 
+                    instruction.split(' ').slice(0, MAX_WORDS).join(' ') + ' ...' : instruction;
+    
+
+    const res = useQuery('getDefaultRecipe', () => apiMeals.getDefaultRecipe());
+
+
+    return (
+        <div className="px-6 md:px-9 lg:px-12 py-6 lg:py-12">
+            <h1 className="font-body1_font text-4xl mb-4">
+                How about {title}?
+            </h1>
+            <div className="flex flex-col lg:flex-row font-body2_font">
+                <img src={imageURL} alt={title}
+                    className="lg:pr-4 max-w-xs max-h-xs" />
+                <div className="py-4 flex flex-wrap justify-between">
+                    <Tag type='area' content={area}/>
+                    {tags && tags.map((tag) => {
+                        return <Tag type='tag' content={tag} />
+                    })}
+                    <p>{instruction}</p>
+                </div>
+                <button 
+                    className="p-2 border-2 border-orange-900 rounded-lg 
+                            bg-orange-500 hover:bg-white text-orange-900"
+                    onClick={navigateRecipe}>
+                        Read More
+                </button>
+            </div>
+        </div>
+    )
+}
+
+export default DefaultRecipe;
