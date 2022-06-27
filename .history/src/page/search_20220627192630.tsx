@@ -126,12 +126,7 @@ const Search: React.FC = () => {
                                 :
                                 <p>{item.strInstructions}</p>}
                             <div className="flex justify-end">
-                            <button 
-                                className="p-1 border-2 border-orange-900 rounded-lg 
-                                        bg-orange-500 hover:bg-white text-orange-900"
-                                >
-                                    Read More
-                            </button>
+                                <span>Read More >></span>
                             </div>
                         </div>
                     })

@@ -33,7 +33,7 @@ const RestTag = (props: TagProps) => {
     return (
         <span
             className={
-                "p-2 py-px mb-1 mr-2 border-2 rounded-3xl font-body2_font border-yellow-300 bg-yellow-300 text-yellow-700"
+                "p-2 py-px mb-1 mr-2 border-2 rounded-3xl font-body2_font border-orange-300 bg-orange-300 text-orange-700"
             }
         >
             {props.content}

@@ -62,7 +62,7 @@ const Result: React.FC = () => {
                             })
                         }
                     </ul>
-                    <hr className="my-5" />
+                    
                     <p className="font-body1_font text-2xl py-2">Instructions</p>
                     {/* {(strInstructions.split(' ').length >= MAX_WORDS) ? 
                         <p>{strInstructions.split(' ').slice(0, MAX_WORDS).join(' ') + ' ...'}</p>
@@ -70,7 +70,7 @@ const Result: React.FC = () => {
                         <p>{strInstructions}</p>} */}
                     {
                         strInstructions.split('\r\n').map((instruction: string) => {
-                            return <p className="pb-2 font-body2_font text-lg">{instruction}</p>
+                            return <p>{instruction}</p><br>
                         })
                     }
                 </div>

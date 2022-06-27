@@ -7,8 +7,6 @@ import { useQuery } from 'react-query';
 import * as apiMeals from '../services/mealDB';
 import Tag from '../component/Tag';
 
-const MAX_WORDS = 24;
-
 type Recipe = {
     idMeal: string,
     strMeal: string,
@@ -91,11 +89,6 @@ const Search: React.FC = () => {
                 buttonStyle="p-2 bg-gray-300 rounded-r-lg"
                 imageStyle="max-h-[30px]" />
             <div>
-                { data && 
-                    <p className="py-2 font-body2_font text-lg">
-                        {data.length} {data.length === 1 ? 'result' : 'results'} found for '{state}'
-                    </p>
-                }
                 {
                     data && data.map((item: Recipe) => {
                         let ingredientsArray = []; 
@@ -108,39 +101,29 @@ const Search: React.FC = () => {
                             }
                         }
 
-                        return <div className="py-2" key={item.idMeal} onClick={clickHandler(item.idMeal)}>
-                            <img src={item.strMealThumb} alt={item.strMeal}
-                                className="lg:pr-4 max-w-full max-h-xs" />
-                            <div className="flex flex-wrap py-2">
-                                <Tag content={item.strCategory} type='category' />
-                                <Tag content={item.strArea} type='area' />
-                                {item.strTags && item.strTags.split(',').map((tag: string) => {
-                                    if (tag !== '') {
-                                        return <Tag type='restTag' content={tag} key={tag} />
-                                    }
-                                })}
-                            </div>
-                            <p className="font-body1_font text-2xl">{item.strMeal}</p>
-                            {(item.strInstructions.split(' ').length >= MAX_WORDS) ? 
-                                <p>{item.strInstructions.split(' ').slice(0, MAX_WORDS).join(' ') + ' ...'}</p>
-                                :
-                                <p>{item.strInstructions}</p>}
-                            <div className="flex justify-end">
-                            <button 
-                                className="p-1 border-2 border-orange-900 rounded-lg 
-                                        bg-orange-500 hover:bg-white text-orange-900"
-                                >
-                                    Read More
-                            </button>
+                        return <div>
+                            <p>{data.length} results found for '{state}'</p>
+                            <div className="py-2" key={item.idMeal} onClick={clickHandler(item.idMeal)}>
+                                <img src={item.strMealThumb} alt={item.strMeal}
+                                    className="lg:pr-4 max-w-full max-h-xs" />
+                                <div className="flex flex-wrap py-2">
+                                    <Tag content={item.strCategory} type='category' />
+                                    <Tag content={item.strArea} type='area' />
+                                    {item.strTags && item.strTags.split(',').map((tag: string) => {
+                                        if (tag !== '') {
+                                            return <Tag type='restTag' content={tag} key={tag} />
+                                        }
+                                    })}
+                                </div>
+                                <p className="font-body1_font text-2xl">{item.strMeal}</p>
                             </div>
                         </div>
                     })
                 }
                 {
                     !data && <div>
-                        <p className="py-10 font-body2_font text-center text-lg">
-                            No results found for '{state}'
-                        </p>
+                        <p className="py-10 font-body2_font text-center text-lg"
+                            >No Result Found :(</p>
                         <TodaysRecipe divStyle="lg:px-12 lg:py-12" />
                     </div>
                 }

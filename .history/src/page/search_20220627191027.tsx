@@ -7,7 +7,7 @@ import { useQuery } from 'react-query';
 import * as apiMeals from '../services/mealDB';
 import Tag from '../component/Tag';
 
-const MAX_WORDS = 24;
+const MAX_WORDS = 40;
 
 type Recipe = {
     idMeal: string,
@@ -125,14 +125,6 @@ const Search: React.FC = () => {
                                 <p>{item.strInstructions.split(' ').slice(0, MAX_WORDS).join(' ') + ' ...'}</p>
                                 :
                                 <p>{item.strInstructions}</p>}
-                            <div className="flex justify-end">
-                            <button 
-                                className="p-1 border-2 border-orange-900 rounded-lg 
-                                        bg-orange-500 hover:bg-white text-orange-900"
-                                >
-                                    Read More
-                            </button>
-                            </div>
                         </div>
                     })
                 }

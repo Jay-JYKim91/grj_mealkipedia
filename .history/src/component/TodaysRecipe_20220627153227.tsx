@@ -48,7 +48,7 @@ const TodaysRecipe: React.FC<TodaysRecipeProp> = ({ divStyle }) => {
                     <Tag type='area' content={strArea}/>
                     {strTags && strTags.split(',').map((tag: string) => {
                         if (tag !== '') {
-                            return <Tag type='restTag' content={tag} key={tag} />
+                            return <Tag type='restTag' content={tag} />
                         }
                     })}
                     {(strInstructions.split(' ').length >= MAX_WORDS) ? 

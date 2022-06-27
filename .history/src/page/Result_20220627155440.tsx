@@ -55,24 +55,20 @@ const Result: React.FC = () => {
                     className="lg:pr-4 max-w-xs max-h-xs" />
                 <div className="py-2">
                     <p className="font-body1_font text-2xl py-2">Ingredients</p>
-                    <ul className="list-disc pl-5">
+                    <ul className="list-disc pl-4">
                         {
                             ingredientsArray.map((ingredient) => {
-                                return <li className="font-body2_font text-lg">{ingredient}</li>
+                                return <li>{ingredient}</li>
                             })
                         }
                     </ul>
-                    <hr className="my-5" />
+                    
                     <p className="font-body1_font text-2xl py-2">Instructions</p>
                     {/* {(strInstructions.split(' ').length >= MAX_WORDS) ? 
                         <p>{strInstructions.split(' ').slice(0, MAX_WORDS).join(' ') + ' ...'}</p>
                         :
                         <p>{strInstructions}</p>} */}
-                    {
-                        strInstructions.split('\r\n').map((instruction: string) => {
-                            return <p className="pb-2 font-body2_font text-lg">{instruction}</p>
-                        })
-                    }
+                    <p>{strInstructions}</p>
                 </div>
             </div>
         </div>
