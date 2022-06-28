@@ -12,20 +12,18 @@ const SearchBar: React.FC<SearchBarProps> = ({  divStyle, inputStyle, buttonStyl
     const [inputValue, setInputValue] = useState("");
     const navigate: NavigateFunction = useNavigate();
 
-    const handleSearch = (e: React.FormEvent) => {
-        e.preventDefault();
+    const HandleClick = () => {
         inputValue && navigate('/search', { state: inputValue });
-        setInputValue("");
     }
 
     return (
-        <form className={divStyle} onSubmit={handleSearch}>
+        <form className={divStyle}>
             <input type="search" 
                 className={inputStyle}
                 value={inputValue}
                 onChange={(event) => setInputValue(event.target.value)}
             />
-            <button className={buttonStyle}>
+            <button className={buttonStyle} onClick={HandleClick}>
                 <img src="./search.png" alt="search"
                     className={imageStyle} />
             </button>

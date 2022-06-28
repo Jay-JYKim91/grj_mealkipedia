@@ -15,6 +15,11 @@ type TodaysRecipeProp = {
 const TodaysRecipe: React.FC<TodaysRecipeProp> = ({ divStyle }) => {
     const navigate: NavigateFunction = useNavigate();
 
+    // const clickHandler: ClickHandler = (idMeal) => (e) => {
+    //     e.preventDefault();
+    //     navigate('/result', { state: idMeal });
+    // }
+
     const { isLoading, isError, data } = useQuery('getDefaultRecipe', () => apiMeals.getDefaultRecipe());
 
     if (isLoading) {

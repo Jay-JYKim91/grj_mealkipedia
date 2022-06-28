@@ -3,6 +3,7 @@ import { NavigateFunction, useLocation, useNavigate } from 'react-router-dom';
 import TodaysRecipe from '../component/TodaysRecipe';
 import SearchBar from '../component/SearchBar';
 import { useQuery } from 'react-query';
+// import ClickHandler from '../component/TodaysRecipe';
 import * as apiMeals from '../services/mealDB';
 import Tag from '../component/Tag';
 
@@ -79,9 +80,9 @@ const Search: React.FC = () => {
         console.log(error);
     }
 
-    const handleNavigateToResult = (event: React.MouseEvent<HTMLDivElement>, idMeal: string): void => {
+    const handleNavigateToResult = (event: React.MouseEvent<HTMLDivElement>): void => {
         event.preventDefault();
-        navigate('/result', { state: idMeal });
+        navigate('/result', { state: data.idMeal });
     }
 
     return (
@@ -109,7 +110,7 @@ const Search: React.FC = () => {
                             }
                         }
 
-                        return <div className="py-2" key={item.idMeal} onClick={(e) => handleNavigateToResult(e, item.idMeal)}>
+                        return <div className="py-2" key={item.idMeal} onClick={handleNavigateToResult}>
                             <img src={item.strMealThumb} alt={item.strMeal}
                                 className="lg:pr-4 max-w-full max-h-xs" />
                             <div className="flex flex-wrap py-2">

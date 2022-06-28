@@ -12,10 +12,13 @@ const SearchBar: React.FC<SearchBarProps> = ({  divStyle, inputStyle, buttonStyl
     const [inputValue, setInputValue] = useState("");
     const navigate: NavigateFunction = useNavigate();
 
+    // const HandleClick = () => {
+    //     inputValue && navigate('/search', { state: inputValue });
+    // }
+
     const handleSearch = (e: React.FormEvent) => {
         e.preventDefault();
         inputValue && navigate('/search', { state: inputValue });
-        setInputValue("");
     }
 
     return (

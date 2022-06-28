@@ -1,7 +1,6 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
 import { useQuery } from 'react-query';
-import { MdCheckCircle } from "react-icons/md";
 import * as apiMeals from '../services/mealDB';
 import Tag from '../component/Tag';
 
@@ -29,6 +28,8 @@ const Result: React.FC = () => {
         }
     }
 
+    // console.log(ingredientsArray);
+
     return (
         <div className="px-6 md:px-9 lg:px-12 my-6">
             <h1 className="font-body1_font text-4xl">
@@ -54,18 +55,16 @@ const Result: React.FC = () => {
                     className="lg:pr-4 max-w-xs max-h-xs" />
                 <div className="py-2">
                     <p className="font-body1_font text-2xl py-2">Ingredients</p>
-                    {
-                        ingredientsArray.map((ingredient) => {
-                            return (
-                                <p className="flex items-center" key={ingredient}>
-                                    <MdCheckCircle className="mr-2 text-orange-500" />
-                                    <span
+                    <ul className="list-disc pl-5">
+                        {
+                            ingredientsArray.map((ingredient) => {
+                                return (<li 
                                         className="font-body2_font text-lg"
-                                    >{ingredient}</span>
-                                </p>
-                            )
-                        })
-                    }
+                                        key={ingredient}
+                                        >{ingredient}</li>)
+                            })
+                        }
+                    </ul>
                     <hr className="my-5" />
                     <p className="font-body1_font text-2xl py-2">Instructions</p>
                     {/* {(strInstructions.split(' ').length >= MAX_WORDS) ? 

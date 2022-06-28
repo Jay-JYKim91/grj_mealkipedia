@@ -54,18 +54,19 @@ const Result: React.FC = () => {
                     className="lg:pr-4 max-w-xs max-h-xs" />
                 <div className="py-2">
                     <p className="font-body1_font text-2xl py-2">Ingredients</p>
-                    {
-                        ingredientsArray.map((ingredient) => {
-                            return (
-                                <p className="flex items-center" key={ingredient}>
-                                    <MdCheckCircle className="mr-2 text-orange-500" />
-                                    <span
-                                        className="font-body2_font text-lg"
-                                    >{ingredient}</span>
-                                </p>
-                            )
-                        })
-                    }
+                        {
+                            ingredientsArray.map((ingredient) => {
+                                return (
+                                    <p className="flex items-center">
+                                        <MdCheckCircle className="mr-2 text-orange-500" />
+                                        <span
+                                            className="font-body2_font text-lg"
+                                            key={ingredient}
+                                        >{ingredient}</span>
+                                    </p>
+                                )
+                            })
+                        }
                     <hr className="my-5" />
                     <p className="font-body1_font text-2xl py-2">Instructions</p>
                     {/* {(strInstructions.split(' ').length >= MAX_WORDS) ? 

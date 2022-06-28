@@ -15,6 +15,14 @@ type TodaysRecipeProp = {
 const TodaysRecipe: React.FC<TodaysRecipeProp> = ({ divStyle }) => {
     const navigate: NavigateFunction = useNavigate();
 
+    // const clickHandler: ClickHandler = (idMeal) => (e) => {
+    //     e.preventDefault();
+    //     navigate('/result', { state: idMeal });
+    // }
+
+    const handleNavigateToResult = (idMeal: string) => {
+        navigate('/result', { state: idMeal });
+    }
     const { isLoading, isError, data } = useQuery('getDefaultRecipe', () => apiMeals.getDefaultRecipe());
 
     if (isLoading) {
@@ -27,11 +35,6 @@ const TodaysRecipe: React.FC<TodaysRecipeProp> = ({ divStyle }) => {
     
     const { idMeal, strMeal, strArea, strCategory, strTags, strMealThumb, strInstructions } = data;
     
-    const handleNavigateToResult = (event: React.MouseEvent<HTMLButtonElement>): void => {
-        event.preventDefault();
-        navigate('/result', { state: idMeal });
-    }
-
     return (
         <div className={divStyle}>
             <h1 className="font-body1_font text-4xl mb-4">
@@ -56,7 +59,7 @@ const TodaysRecipe: React.FC<TodaysRecipeProp> = ({ divStyle }) => {
                 <button 
                     className="p-2 border-2 border-orange-900 rounded-lg 
                             bg-orange-500 hover:bg-white text-orange-900"
-                    onClick={handleNavigateToResult}>
+                    onClick={handleNavigateToResult(idMeal)}>
                         Read More
                 </button>
             </div>

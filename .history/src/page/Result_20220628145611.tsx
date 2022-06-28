@@ -57,10 +57,11 @@ const Result: React.FC = () => {
                     {
                         ingredientsArray.map((ingredient) => {
                             return (
-                                <p className="flex items-center" key={ingredient}>
+                                <p className="flex items-center">
                                     <MdCheckCircle className="mr-2 text-orange-500" />
                                     <span
                                         className="font-body2_font text-lg"
+                                        key={ingredient}
                                     >{ingredient}</span>
                                 </p>
                             )

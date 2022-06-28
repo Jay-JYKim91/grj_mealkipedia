@@ -3,6 +3,7 @@ import { NavigateFunction, useLocation, useNavigate } from 'react-router-dom';
 import TodaysRecipe from '../component/TodaysRecipe';
 import SearchBar from '../component/SearchBar';
 import { useQuery } from 'react-query';
+// import ClickHandler from '../component/TodaysRecipe';
 import * as apiMeals from '../services/mealDB';
 import Tag from '../component/Tag';
 
@@ -65,9 +66,15 @@ interface LocationState {
 
 const Search: React.FC = () => {
     const navigate: NavigateFunction = useNavigate();
-    let location = useLocation();
-    const { state } = location as LocationState;
+    let location = useLocation<LocationState>();
+    const { state } = location ;
+    // state = state as string;
+    console.log(location);
 
+    const clickHandler = (idMeal: string) => (e: MouseEvent) => {
+        e.preventDefault();
+        navigate('/result', { state: idMeal });
+    };
     
     const { isLoading, isError, data, error } = useQuery('searchRecipeByQuery', () => apiMeals.searchRecipeByQuery(state));
 
@@ -79,10 +86,8 @@ const Search: React.FC = () => {
         console.log(error);
     }
 
-    const handleNavigateToResult = (event: React.MouseEvent<HTMLDivElement>, idMeal: string): void => {
-        event.preventDefault();
-        navigate('/result', { state: idMeal });
-    }
+    // console.log(data);
+
 
     return (
         <div className="px-6 md:px-9 lg:px-12 my-6">
@@ -109,7 +114,7 @@ const Search: React.FC = () => {
                             }
                         }
 
-                        return <div className="py-2" key={item.idMeal} onClick={(e) => handleNavigateToResult(e, item.idMeal)}>
+                        return <div className="py-2" key={item.idMeal} onClick={clickHandler(item.idMeal)}>
                             <img src={item.strMealThumb} alt={item.strMeal}
                                 className="lg:pr-4 max-w-full max-h-xs" />
                             <div className="flex flex-wrap py-2">

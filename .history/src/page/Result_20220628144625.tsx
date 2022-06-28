@@ -1,7 +1,7 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
 import { useQuery } from 'react-query';
-import { MdCheckCircle } from "react-icons/md";
+import { BsCheckCircle } from "react-icons/bs";
 import * as apiMeals from '../services/mealDB';
 import Tag from '../component/Tag';
 
@@ -54,18 +54,21 @@ const Result: React.FC = () => {
                     className="lg:pr-4 max-w-xs max-h-xs" />
                 <div className="py-2">
                     <p className="font-body1_font text-2xl py-2">Ingredients</p>
-                    {
-                        ingredientsArray.map((ingredient) => {
-                            return (
-                                <p className="flex items-center" key={ingredient}>
-                                    <MdCheckCircle className="mr-2 text-orange-500" />
-                                    <span
-                                        className="font-body2_font text-lg"
-                                    >{ingredient}</span>
-                                </p>
-                            )
-                        })
-                    }
+                    {/* <ul className=""> */}
+                        {
+                            ingredientsArray.map((ingredient) => {
+                                return (
+                                    <p className="flex items-middle">
+                                        <BsCheckCircle />
+                                        <span
+                                            className="font-body2_font text-lg"
+                                            key={ingredient}
+                                        >{ingredient}</span>
+                                    </p>
+                                )
+                            })
+                        }
+                    {/* </ul> */}
                     <hr className="my-5" />
                     <p className="font-body1_font text-2xl py-2">Instructions</p>
                     {/* {(strInstructions.split(' ').length >= MAX_WORDS) ? 

@@ -12,11 +12,10 @@ const Home: React.FC = () => {
                 </h1>
                 <SearchBar 
                     divStyle="flex justify-center lg:justify-end" 
-                    inputStyle="p-2 lg:p-4 w-full text-2xl font-body1_font rounded-l-lg border-2 border-gray-300"
-                    imageStyle="max-h-[40px]"
+                    inputStyle="p-2 lg:p-4 text-2xl font-body1_font rounded-l-lg border-2 border-gray-300"
                     buttonStyle="p-2 bg-gray-300 rounded-r-lg" />
             </div>
-            <TodaysRecipe divStyle="px-6 md:px-9 lg:px-12 py-6 lg:py-12" />
+            <TodaysRecipe divStyle="px-2 md:px-9 lg:px-12 py-6 lg:py-12" />
         </>
     )
 };
