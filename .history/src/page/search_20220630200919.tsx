@@ -68,7 +68,7 @@ const Search: React.FC = () => {
     let location = useLocation();
     const { state } = location as LocationState;
 
-    let { isLoading, isError, data, error, refetch } = useQuery('searchRecipeByQuery', () => apiMeals.searchRecipeByQuery(state));
+    const { isLoading, isError, data, error, refetch } = useQuery('searchRecipeByQuery', () => apiMeals.searchRecipeByQuery(state));
 
     useEffect(() => {
         isLoading = true;

@@ -67,14 +67,14 @@ const Search: React.FC = () => {
     const navigate: NavigateFunction = useNavigate();
     let location = useLocation();
     const { state } = location as LocationState;
-
+    
     let { isLoading, isError, data, error, refetch } = useQuery('searchRecipeByQuery', () => apiMeals.searchRecipeByQuery(state));
 
     useEffect(() => {
         isLoading = true;
         refetch();
     }, [state])
-
+    
     if (isLoading) {
         return (
             <div className="px-6 md:px-9 lg:px-12 my-6">
@@ -112,7 +112,7 @@ const Search: React.FC = () => {
                 buttonStyle="p-2 bg-gray-300 rounded-r-lg"
                 imageStyle="max-h-[30px]" />
             <div>
-                { data && 
+                { !isLoading && data && 
                     <p className="py-3 font-body2_font text-lg">
                         {data.length} {data.length === 1 ? 'result' : 'results'} found for '{state}'
                     </p>
@@ -167,7 +167,7 @@ const Search: React.FC = () => {
                 </div>
                 
                 {
-                    !data && <div>
+                    (!isLoading &&!data) && <div>
                         <p className="py-10 font-body2_font text-center text-lg">
                             No results found for '{state}'
                         </p>
