@@ -2,13 +2,13 @@ import React from 'react'
 import TodaysRecipe from '../component/TodaysRecipe'
 import SearchBar from '../component/SearchBar'
 
-const Home: React.FC = () => {
+const Home: React.ReactHTML = () => {
     return (
         <>
             <div className="px-6 md:px-9 lg:px-12 py-40 bg-cover bg-[url('images/main_background.jpg')] text-center lg:text-right">
                 <div className="max-w-7xl m-auto">
                     <h1 className="font-body1_font text-5xl lg:text-7xl mb-8 drop-shadow-[2.5px_2.5px_0.5px_rgba(255,255,255,0.8)]">
-                        Find a Recipe
+                        Find a Recipe!
                     </h1>
                     <SearchBar
                         divStyle="flex justify-center lg:justify-end"

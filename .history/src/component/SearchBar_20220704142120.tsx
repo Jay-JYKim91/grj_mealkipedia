@@ -5,17 +5,17 @@ type SearchBarProps = {
     divStyle: string
     inputStyle: string
     buttonStyle: string
-    imageStyle?: string
+    imageStyle?: string;
 }
 
 const SearchBar: React.FC<SearchBarProps> = ({  divStyle, inputStyle, buttonStyle, imageStyle }) => {
-    const [inputValue, setInputValue] = useState('')
-    const navigate: NavigateFunction = useNavigate()
+    const [inputValue, setInputValue] = useState("");
+    const navigate: NavigateFunction = useNavigate();
 
     const handleSearch = (e: React.FormEvent) => {
-        e.preventDefault()
-        inputValue && navigate('/search', { state: inputValue })
-        setInputValue('')
+        e.preventDefault();
+        inputValue && navigate('/search', { state: inputValue });
+        setInputValue("");
     }
 
     return (
@@ -34,4 +34,4 @@ const SearchBar: React.FC<SearchBarProps> = ({  divStyle, inputStyle, buttonStyl
     )
 }
 
-export default SearchBar
+export default SearchBar;

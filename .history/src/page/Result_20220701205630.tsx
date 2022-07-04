@@ -98,6 +98,8 @@ const Result: React.FC = () => {
                                         {instruction}
                                     </p>
                                 </>
+
+                                
                             )
                         })
                     }

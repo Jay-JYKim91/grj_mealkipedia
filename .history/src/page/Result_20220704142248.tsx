@@ -88,7 +88,7 @@ const Result: React.FC = () => {
                             }
                             return n;
                         }).map((instruction: string, index: number) => {
-                            return (
+                            return (d
                                 <>
                                     <p className="flex items-center">
                                         <GiSpoon className="mr-2 text-orange-500" />

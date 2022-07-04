@@ -82,12 +82,7 @@ const Result: React.FC = () => {
                     <hr className="my-5" />
                     <p className="font-body1_font text-2xl md:text-3xl py-2">Instructions</p>
                     {
-                        strInstructions.split('\r\n').filter((n:string) => {
-                            if (n.length < 10) {
-                                return;
-                            }
-                            return n;
-                        }).map((instruction: string, index: number) => {
+                        strInstructions.split('\r\n').filter((n:string) => n).map((instruction: string, index: number) => {
                             return (
                                 <>
                                     <p className="flex items-center">
@@ -98,6 +93,8 @@ const Result: React.FC = () => {
                                         {instruction}
                                     </p>
                                 </>
+
+                                
                             )
                         })
                     }
