@@ -1,15 +1,15 @@
 import React from 'react';
-import { Route, Routes, NavigateFunction, useNavigate } from 'react-router-dom';
-import Home from './page/Home';
-import Result from './page/Result';
-import Search from './page/Search';
+import { Route, Routes, NavigateFunction, useNavigate } from 'react-router-dom'
+import Home from './page/Home'
+import Result from './page/Result'
+import Search from './page/Search'
 
 const App: React.FC = () => {
-    const navigate: NavigateFunction = useNavigate();
+    const navigate: NavigateFunction = useNavigate()
 
     const navigateHome = () => {
-        navigate('/');
-    };
+        navigate('/')
+    }
 
     return (
         <div className="app">
@@ -40,7 +40,7 @@ const App: React.FC = () => {
                 </p>
             </footer>
         </div>
-    );
-};
+    )
+}
 
-export default App;
+export default App
