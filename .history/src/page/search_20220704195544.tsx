@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { NavigateFunction, useLocation, useNavigate } from 'react-router-dom';
 import { useQuery } from 'react-query';
-import TodaysRecipe from '../component/RandomRecipe';
+import TodaysRecipe from '../component/TodaysRecipe';
 import SearchBar from '../component/SearchBar';
 
 import * as apiMeals from '../services/mealDB';

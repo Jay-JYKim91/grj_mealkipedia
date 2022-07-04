@@ -20,7 +20,7 @@ const Result: React.FC = () => {
     }
 
     if (isError) {
-        return <Error />;
+        return <Error />
     }
 
     const {

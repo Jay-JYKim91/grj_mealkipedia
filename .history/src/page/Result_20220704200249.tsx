@@ -15,7 +15,7 @@ const Result: React.FC = () => {
         apiMeals.searchRecipeById(state as string)
     );
 
-    if (isLoading) {
+    if (!isLoading) {
         return <Loading />;
     }
 

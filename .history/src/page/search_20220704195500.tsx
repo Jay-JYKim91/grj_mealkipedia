@@ -1,13 +1,12 @@
 import React, { useEffect } from 'react';
 import { NavigateFunction, useLocation, useNavigate } from 'react-router-dom';
 import { useQuery } from 'react-query';
-import TodaysRecipe from '../component/RandomRecipe';
+import TodaysRecipe from '../component/TodaysRecipe';
 import SearchBar from '../component/SearchBar';
 
 import * as apiMeals from '../services/mealDB';
 import Tag from '../component/Tag';
 import Loading from '../component/Loading';
-import Error from '../component/Error';
 
 const MAX_CHARS = 125;
 
@@ -71,7 +70,7 @@ const Search: React.FC = () => {
     const location = useLocation();
     const { state } = location as LocationState;
 
-    let { isLoading, isError, data, refetch } = useQuery(
+    let { isLoading, isError, data, error, refetch } = useQuery(
         'searchRecipeByQuery',
         () => apiMeals.searchRecipeByQuery(state)
     );
@@ -82,11 +81,11 @@ const Search: React.FC = () => {
     }, [state]);
 
     if (isLoading) {
-        return <Loading />;
+        return <Loading />
     }
 
     if (isError) {
-        return <Error />;
+        console.log(error);
     }
 
     const handleNavigateToResult = (

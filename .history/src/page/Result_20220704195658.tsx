@@ -19,7 +19,7 @@ const Result: React.FC = () => {
         return <Loading />;
     }
 
-    if (isError) {
+    if (!isError) {
         return <Error />;
     }
 

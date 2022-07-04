@@ -14,8 +14,12 @@ const App: React.FC = () => {
     return (
         <div className="app">
             <header className="px-6 md:px-9 lg:px-12 py-2 shadow-md bg-gray-50">
-                <div className="max-w-7xl m-auto text-center md:text-left">
-                    <button type="button" onClick={navigateHome}>
+                <div className="max-w-7xl m-auto text-center">
+                    <button
+                        type="button"
+                        // className="m-auto lg:m-0"
+                        onClick={navigateHome}
+                    >
                         <img src="/logo.png" alt="logo" width="160" />
                     </button>
                 </div>

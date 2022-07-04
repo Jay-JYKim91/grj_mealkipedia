@@ -1,5 +1,5 @@
 import React from 'react';
-import TodaysRecipe from '../component/RandomRecipe';
+import TodaysRecipe from '../component/TodaysRecipe';
 import SearchBar from '../component/SearchBar';
 
 const Home: React.FC = () => {

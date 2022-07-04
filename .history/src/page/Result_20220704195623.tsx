@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLocation } from 'react-router-dom';
+// import { useLocation } from 'react-router-dom';
 import { useQuery } from 'react-query';
 import { MdCheckCircle } from 'react-icons/md';
 import { GiSpoon } from 'react-icons/gi';
@@ -9,10 +9,10 @@ import Loading from '../component/Loading';
 import Error from '../component/Error';
 
 const Result: React.FC = () => {
-    let { state } = useLocation();
+    // let { state } = useLocation();
 
     const { isLoading, isError, data } = useQuery('searchRecipeById', () =>
-        apiMeals.searchRecipeById(state as string)
+        apiMeals.searchRecipeById('1')
     );
 
     if (isLoading) {

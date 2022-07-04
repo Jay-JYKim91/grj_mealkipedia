@@ -9,10 +9,10 @@ import Loading from '../component/Loading';
 import Error from '../component/Error';
 
 const Result: React.FC = () => {
-    let { state } = useLocation();
+    // let { state } = useLocation();
 
     const { isLoading, isError, data } = useQuery('searchRecipeById', () =>
-        apiMeals.searchRecipeById(state as string)
+        apiMeals.searchRecipeById('1')
     );
 
     if (isLoading) {

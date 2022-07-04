@@ -6,7 +6,6 @@ import { GiSpoon } from 'react-icons/gi';
 import * as apiMeals from '../services/mealDB';
 import Tag from '../component/Tag';
 import Loading from '../component/Loading';
-import Error from '../component/Error';
 
 const Result: React.FC = () => {
     let { state } = useLocation();
@@ -20,7 +19,7 @@ const Result: React.FC = () => {
     }
 
     if (isError) {
-        return <Error />;
+        return <span>Error</span>;
     }
 
     const {

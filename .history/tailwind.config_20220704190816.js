@@ -11,9 +11,9 @@ module.exports = {
         'body1_font': ['Oxanium', 'cursive'],
         'body2_font': ['Biryani', 'sans-serif']
       },
-      // backgroundImage: {
-      //   'hero-bg': "url('')",
-      // }
+      backgroundImage: {
+        'hero-bg': "url('/logo.png')",
+      }
     },
   },
   plugins: [],
