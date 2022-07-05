@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useQuery } from 'react-query';
 import { NavigateFunction, useNavigate } from 'react-router-dom';
 import * as apiMeals from '../services/mealDB';
@@ -7,7 +7,7 @@ import Loading from './Loading';
 import Tag from './Tag';
 
 const MOBILE_MAX_WORDS = 40;
-const DESKTOP_MAX_CHARS = 500;
+const DESKTOP_MAX_CHARS = 250;
 
 type TodaysRecipeProp = {
     divStyle: string;
@@ -16,18 +16,9 @@ type TodaysRecipeProp = {
 const TodaysRecipe: React.FC<TodaysRecipeProp> = ({ divStyle }) => {
     const navigate: NavigateFunction = useNavigate();
 
-    const { isLoading, isError, data, refetch } = useQuery(
-        'getDefaultRecipe',
-        () => apiMeals.getDefaultRecipe()
+    const { isLoading, isError, data } = useQuery('getDefaultRecipe', () =>
+        apiMeals.getDefaultRecipe()
     );
-
-    let today = new Date();
-    let one = `${today.getFullYear()}/
-            ${today.getMonth() + 1}/${today.getDate()}`;
-
-    useEffect(() => {
-        refetch();
-    }, [one]);
 
     if (isLoading) {
         return <Loading />;
@@ -53,12 +44,6 @@ const TodaysRecipe: React.FC<TodaysRecipeProp> = ({ divStyle }) => {
         event.preventDefault();
         navigate('/result', { state: idMeal });
     };
-
-    let processedInstructions: string =
-        strInstructions.split('').length >= DESKTOP_MAX_CHARS
-            ? strInstructions.split('').slice(0, DESKTOP_MAX_CHARS).join('') +
-              '...'
-            : strInstructions;
 
     return (
         <div className={divStyle}>
@@ -97,29 +82,23 @@ const TodaysRecipe: React.FC<TodaysRecipeProp> = ({ divStyle }) => {
                                   .join(' ') + ' ...'
                             : strInstructions}
                     </p>
-                    <div className="grow self-auto hidden md:block">
-                        {processedInstructions
-                            .split(/\r?\n/)
-                            .map((sentence: string) => (
-                                <p
-                                    key={sentence}
-                                    className="text-lg text-slate-600 mb-1"
-                                >
-                                    {sentence}
-                                </p>
-                            ))}
-                    </div>
-                    <div className="text-right">
-                        <button
-                            type="button"
-                            className="p-2 mt-2 border-2 border-orange-900 rounded-lg 
-                                    bg-orange-500 hover:bg-white text-orange-900
-                                    w-full md:w-2/5 lg:text-xl"
-                            onClick={handleNavigateToResult}
-                        >
-                            Read More
-                        </button>
-                    </div>
+                    <p className="grow self-auto hidden md:block">
+                        {strInstructions.split('').length >= DESKTOP_MAX_CHARS
+                            ? strInstructions
+                                  .split('')
+                                  .slice(0, DESKTOP_MAX_CHARS)
+                                  .join('') + ' ...'
+                            : strInstructions}
+                    </p>
+                    <button
+                        type="button"
+                        className="p-2 mt-2 border-2 border-orange-900 rounded-lg 
+                                bg-orange-500 hover:bg-white text-orange-900
+                                lg:text-xl"
+                        onClick={handleNavigateToResult}
+                    >
+                        Read More
+                    </button>
                 </div>
             </div>
         </div>

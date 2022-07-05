@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useQuery } from 'react-query';
 import { NavigateFunction, useNavigate } from 'react-router-dom';
 import * as apiMeals from '../services/mealDB';
@@ -16,18 +16,9 @@ type TodaysRecipeProp = {
 const TodaysRecipe: React.FC<TodaysRecipeProp> = ({ divStyle }) => {
     const navigate: NavigateFunction = useNavigate();
 
-    const { isLoading, isError, data, refetch } = useQuery(
-        'getDefaultRecipe',
-        () => apiMeals.getDefaultRecipe()
+    const { isLoading, isError, data } = useQuery('getDefaultRecipe', () =>
+        apiMeals.getDefaultRecipe()
     );
-
-    let today = new Date();
-    let one = `${today.getFullYear()}/
-            ${today.getMonth() + 1}/${today.getDate()}`;
-
-    useEffect(() => {
-        refetch();
-    }, [one]);
 
     if (isLoading) {
         return <Loading />;
@@ -101,10 +92,7 @@ const TodaysRecipe: React.FC<TodaysRecipeProp> = ({ divStyle }) => {
                         {processedInstructions
                             .split(/\r?\n/)
                             .map((sentence: string) => (
-                                <p
-                                    key={sentence}
-                                    className="text-lg text-slate-600 mb-1"
-                                >
+                                <p className="text-lg text-slate-600 mb-2">
                                     {sentence}
                                 </p>
                             ))}

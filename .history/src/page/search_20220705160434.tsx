@@ -9,6 +9,8 @@ import Tag from '../component/Tag';
 import Loading from '../component/Loading';
 import Error from '../component/Error';
 
+// const MAX_CHARS = 125;
+
 type Recipe = {
     idMeal: string;
     strMeal: string;
@@ -86,6 +88,8 @@ const Search: React.FC = () => {
         return <Error />;
     }
 
+    console.log(data);
+
     const handleNavigateToResult = (
         event: React.MouseEvent<HTMLDivElement>,
         idMeal: string
@@ -109,7 +113,7 @@ const Search: React.FC = () => {
                         &nbsp;found for &apos;{state}&apos;
                     </p>
                 )}
-                <div className="flex flex-col md:flex-row md:flex-wrap md:justify-between">
+                {/* <div className="flex flex-col md:flex-row md:flex-wrap md:justify-between">
                     {data &&
                         data.map((item: Recipe) => {
                             let ingredientsArray = [];
@@ -192,7 +196,7 @@ const Search: React.FC = () => {
                                 </div>
                             );
                         })}
-                </div>
+                </div> */}
                 {!data && (
                     <div>
                         <p className="py-10 font-body2_font text-center text-lg">

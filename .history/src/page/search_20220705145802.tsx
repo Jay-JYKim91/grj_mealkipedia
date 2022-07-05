@@ -9,6 +9,8 @@ import Tag from '../component/Tag';
 import Loading from '../component/Loading';
 import Error from '../component/Error';
 
+// const MAX_CHARS = 125;
+
 type Recipe = {
     idMeal: string;
     strMeal: string;
@@ -75,6 +77,7 @@ const Search: React.FC = () => {
     );
 
     useEffect(() => {
+        isLoading = true;
         refetch();
     }, [state]);
 
@@ -125,7 +128,7 @@ const Search: React.FC = () => {
 
                             return (
                                 <div
-                                    className="mb-5 border-white rounded-lg shadow-3xl md:max-w-[340px] lg:max-w-[300px] xl:max-w-[285px] relative hover:translate-x-1 hover:translate-y-1"
+                                    className="mb-5 border-white rounded-lg shadow-3xl md:max-w-[340px] lg:max-w-[300px] xl:max-w-[285px] relative hover:translate-x-1 hover:translate-y-1 cursor-pointer"
                                     key={item.idMeal}
                                     onClick={(
                                         e: React.MouseEvent<

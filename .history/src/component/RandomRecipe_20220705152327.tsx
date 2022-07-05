@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useQuery } from 'react-query';
 import { NavigateFunction, useNavigate } from 'react-router-dom';
 import * as apiMeals from '../services/mealDB';
@@ -16,18 +16,9 @@ type TodaysRecipeProp = {
 const TodaysRecipe: React.FC<TodaysRecipeProp> = ({ divStyle }) => {
     const navigate: NavigateFunction = useNavigate();
 
-    const { isLoading, isError, data, refetch } = useQuery(
-        'getDefaultRecipe',
-        () => apiMeals.getDefaultRecipe()
+    const { isLoading, isError, data } = useQuery('getDefaultRecipe', () =>
+        apiMeals.getDefaultRecipe()
     );
-
-    let today = new Date();
-    let one = `${today.getFullYear()}/
-            ${today.getMonth() + 1}/${today.getDate()}`;
-
-    useEffect(() => {
-        refetch();
-    }, [one]);
 
     if (isLoading) {
         return <Loading />;
@@ -53,12 +44,6 @@ const TodaysRecipe: React.FC<TodaysRecipeProp> = ({ divStyle }) => {
         event.preventDefault();
         navigate('/result', { state: idMeal });
     };
-
-    let processedInstructions: string =
-        strInstructions.split('').length >= DESKTOP_MAX_CHARS
-            ? strInstructions.split('').slice(0, DESKTOP_MAX_CHARS).join('') +
-              '...'
-            : strInstructions;
 
     return (
         <div className={divStyle}>
@@ -98,28 +83,32 @@ const TodaysRecipe: React.FC<TodaysRecipeProp> = ({ divStyle }) => {
                             : strInstructions}
                     </p>
                     <div className="grow self-auto hidden md:block">
-                        {processedInstructions
-                            .split(/\r?\n/)
-                            .map((sentence: string) => (
-                                <p
-                                    key={sentence}
-                                    className="text-lg text-slate-600 mb-1"
-                                >
-                                    {sentence}
-                                </p>
-                            ))}
+                        {strInstructions.split('').length >=
+                        DESKTOP_MAX_CHARS ? (
+                            <p>
+                                {strInstructions
+                                    .split('')
+                                    .slice(0, DESKTOP_MAX_CHARS)
+                                    .join('')
+                                    .split('.')
+                                    .map((instruction: string) => {
+                                        return <p>{instruction}</p>;
+                                    })
+                                    + ' ...'}
+                            </p>
+                        ) : (
+                            strInstructions
+                        )}
                     </div>
-                    <div className="text-right">
-                        <button
-                            type="button"
-                            className="p-2 mt-2 border-2 border-orange-900 rounded-lg 
-                                    bg-orange-500 hover:bg-white text-orange-900
-                                    w-full md:w-2/5 lg:text-xl"
-                            onClick={handleNavigateToResult}
-                        >
-                            Read More
-                        </button>
-                    </div>
+                    <button
+                        type="button"
+                        className="p-2 mt-2 border-2 border-orange-900 rounded-lg 
+                                bg-orange-500 hover:bg-white text-orange-900
+                                lg:text-xl"
+                        onClick={handleNavigateToResult}
+                    >
+                        Read More
+                    </button>
                 </div>
             </div>
         </div>

@@ -9,6 +9,8 @@ import Tag from '../component/Tag';
 import Loading from '../component/Loading';
 import Error from '../component/Error';
 
+// const MAX_CHARS = 125;
+
 type Recipe = {
     idMeal: string;
     strMeal: string;
@@ -85,6 +87,8 @@ const Search: React.FC = () => {
     if (isError) {
         return <Error />;
     }
+
+    console.log(data);
 
     const handleNavigateToResult = (
         event: React.MouseEvent<HTMLDivElement>,

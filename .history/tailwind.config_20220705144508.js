@@ -12,7 +12,7 @@ module.exports = {
         'body2_font': ['Biryani', 'sans-serif']
       },
       boxShadow: {
-        '3xl': "rgba(0, 0, 0, 0.24) 0px 3px 8px",
+        '3xl': "rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px",
       }
     },
   },

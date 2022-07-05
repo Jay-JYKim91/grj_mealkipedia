@@ -9,6 +9,8 @@ import Tag from '../component/Tag';
 import Loading from '../component/Loading';
 import Error from '../component/Error';
 
+const MAX_CHARS = 125;
+
 type Recipe = {
     idMeal: string;
     strMeal: string;
@@ -75,6 +77,7 @@ const Search: React.FC = () => {
     );
 
     useEffect(() => {
+        isLoading = true;
         refetch();
     }, [state]);
 
@@ -87,7 +90,7 @@ const Search: React.FC = () => {
     }
 
     const handleNavigateToResult = (
-        event: React.MouseEvent<HTMLDivElement>,
+        event: React.MouseEvent<HTMLButtonElement>,
         idMeal: string
     ): void => {
         event.preventDefault();
@@ -125,21 +128,15 @@ const Search: React.FC = () => {
 
                             return (
                                 <div
-                                    className="mb-5 border-white rounded-lg shadow-3xl md:max-w-[340px] lg:max-w-[300px] xl:max-w-[285px] relative hover:translate-x-1 hover:translate-y-1"
+                                    className="mb-5 border-white rounded-lg shadow-2xl md:max-w-[340px] lg:max-w-[300px] xl:max-w-[285px]"
                                     key={item.idMeal}
-                                    onClick={(
-                                        e: React.MouseEvent<
-                                            HTMLDivElement,
-                                            MouseEvent
-                                        >
-                                    ) => handleNavigateToResult(e, item.idMeal)}
                                 >
                                     <img
                                         src={item.strMealThumb}
                                         alt={item.strMeal}
-                                        className="max-w-full max-h-xs rounded-[8px_8px_0px_0px]"
+                                        className="lg:pr-4 max-w-full max-h-xs rounded-[8px_8px_0px_0px]"
                                     />
-                                    <div className="p-4">
+                                    <div className="p-4 relative">
                                         <div className="flex flex-wrap">
                                             <Tag
                                                 content={item.strCategory}
@@ -165,25 +162,36 @@ const Search: React.FC = () => {
                                                             )
                                                     )}
                                         </div>
-                                        <p className="font-body1_font text-2xl pb-12">
+                                        <p className="font-body1_font text-2xl truncate">
                                             {item.strMeal}
                                         </p>
+                                        {/* {item.strInstructions.split(' ')
+                                            .length >= MAX_CHARS ? (
+                                            <p className="pb-14">
+                                                {item.strInstructions
+                                                    .split('')
+                                                    .slice(0, MAX_CHARS)
+                                                    .join('') + ' ...'}
+                                            </p>
+                                        ) : (
+                                            <p>{item.strInstructions}</p>
+                                        )} */}
                                         <div className="flex justify-end absolute bottom-4 right-4">
                                             <button
                                                 type="button"
                                                 className="p-1 mt-2 border-2 min-w-[150px] border-orange-900 rounded-lg 
                                                         bg-orange-500 hover:bg-white text-orange-900"
-                                                // onClick={(
-                                                //     e: React.MouseEvent<
-                                                //         HTMLButtonElement,
-                                                //         MouseEvent
-                                                //     >
-                                                // ) =>
-                                                //     handleNavigateToResult(
-                                                //         e,
-                                                //         item.idMeal
-                                                //     )
-                                                // }
+                                                onClick={(
+                                                    e: React.MouseEvent<
+                                                        HTMLButtonElement,
+                                                        MouseEvent
+                                                    >
+                                                ) =>
+                                                    handleNavigateToResult(
+                                                        e,
+                                                        item.idMeal
+                                                    )
+                                                }
                                             >
                                                 Read More
                                             </button>

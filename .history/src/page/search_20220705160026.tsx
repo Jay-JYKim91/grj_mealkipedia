@@ -9,6 +9,8 @@ import Tag from '../component/Tag';
 import Loading from '../component/Loading';
 import Error from '../component/Error';
 
+// const MAX_CHARS = 125;
+
 type Recipe = {
     idMeal: string;
     strMeal: string;

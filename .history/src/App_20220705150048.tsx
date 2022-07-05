@@ -29,26 +29,16 @@ const App: React.FC = () => {
             </main>
             <footer className="flex flex-col items-center justify-center px-12 py-4 bg-gray-400">
                 <img src="/logo.png" alt="logo" width="100" className="mb-2" />
-                <p className="font-body2_font">
-                    Developed by&nbsp;
-                    <a
-                        href="https://github.com/Jay-JYKim91/grj_mealkipedia"
-                        target="_blank"
-                        rel="noreferrer"
-                        className="cursor-pointer hover:underline hover:decoration-solid hover:decoration-2"
-                    >
-                        Juyeon Kim
-                    </a>
-                </p>
+                <p className="font-body2_font">Developed by Juyeon Kim</p>
                 <p>
-                    Using&nbsp;
+                    Using
                     <a
                         href="https://www.themealdb.com/"
                         target="_blank"
                         rel="noreferrer"
-                        className="cursor-pointer hover:underline hover:decoration-solid hover:decoration-2"
+                        className="cursor-pointer"
                     >
-                        TheMealDB
+                        &nbsp;TheMealDB
                     </a>
                 </p>
             </footer>

@@ -9,6 +9,8 @@ import Tag from '../component/Tag';
 import Loading from '../component/Loading';
 import Error from '../component/Error';
 
+// const MAX_CHARS = 125;
+
 type Recipe = {
     idMeal: string;
     strMeal: string;
@@ -75,6 +77,7 @@ const Search: React.FC = () => {
     );
 
     useEffect(() => {
+        isLoading = true;
         refetch();
     }, [state]);
 
@@ -132,7 +135,8 @@ const Search: React.FC = () => {
                                             HTMLDivElement,
                                             MouseEvent
                                         >
-                                    ) => handleNavigateToResult(e, item.idMeal)}
+                                    ) => handleNavigateToResult(e, item.idMeal)
+                                    }
                                 >
                                     <img
                                         src={item.strMealThumb}

@@ -29,8 +29,7 @@ const App: React.FC = () => {
             </main>
             <footer className="flex flex-col items-center justify-center px-12 py-4 bg-gray-400">
                 <img src="/logo.png" alt="logo" width="100" className="mb-2" />
-                <p className="font-body2_font">
-                    Developed by&nbsp;
+                <p className="font-body2_font">Developed by&nbsp;
                     <a
                         href="https://github.com/Jay-JYKim91/grj_mealkipedia"
                         target="_blank"

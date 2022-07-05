@@ -5,67 +5,69 @@ import TodaysRecipe from '../component/RandomRecipe';
 import SearchBar from '../component/SearchBar';
 
 import * as apiMeals from '../services/mealDB';
-import Tag from '../component/Tag';
+// import Tag from '../component/Tag';
 import Loading from '../component/Loading';
 import Error from '../component/Error';
 
-type Recipe = {
-    idMeal: string;
-    strMeal: string;
-    strCategory: string;
-    strArea: string;
-    strInstructions: string;
-    strMealThumb: string;
-    strTags: string;
-    strYoutube: string;
-    strIngredient1?: string;
-    strIngredient2?: string;
-    strIngredient3?: string;
-    strIngredient4?: string;
-    strIngredient5?: string;
-    strIngredient6?: string;
-    strIngredient7?: string;
-    strIngredient8?: string;
-    strIngredient9?: string;
-    strIngredient10?: string;
-    strIngredient11?: string;
-    strIngredient12?: string;
-    strIngredient13?: string;
-    strIngredient14?: string;
-    strIngredient15?: string;
-    strIngredient16?: string;
-    strIngredient17?: string;
-    strIngredient18?: string;
-    strIngredient19?: string;
-    strIngredient20?: string;
-    strMeasure1?: string;
-    strMeasure2?: string;
-    strMeasure3?: string;
-    strMeasure4?: string;
-    strMeasure5?: string;
-    strMeasure6?: string;
-    strMeasure7?: string;
-    strMeasure8?: string;
-    strMeasure9?: string;
-    strMeasure10?: string;
-    strMeasure11?: string;
-    strMeasure12?: string;
-    strMeasure13?: string;
-    strMeasure14?: string;
-    strMeasure15?: string;
-    strMeasure16?: string;
-    strMeasure17?: string;
-    strMeasure18?: string;
-    strMeasure19?: string;
-    strMeasure20?: string;
-};
+// const MAX_CHARS = 125;
+
+// type Recipe = {
+//     idMeal: string;
+//     strMeal: string;
+//     strCategory: string;
+//     strArea: string;
+//     strInstructions: string;
+//     strMealThumb: string;
+//     strTags: string;
+//     strYoutube: string;
+//     strIngredient1?: string;
+//     strIngredient2?: string;
+//     strIngredient3?: string;
+//     strIngredient4?: string;
+//     strIngredient5?: string;
+//     strIngredient6?: string;
+//     strIngredient7?: string;
+//     strIngredient8?: string;
+//     strIngredient9?: string;
+//     strIngredient10?: string;
+//     strIngredient11?: string;
+//     strIngredient12?: string;
+//     strIngredient13?: string;
+//     strIngredient14?: string;
+//     strIngredient15?: string;
+//     strIngredient16?: string;
+//     strIngredient17?: string;
+//     strIngredient18?: string;
+//     strIngredient19?: string;
+//     strIngredient20?: string;
+//     strMeasure1?: string;
+//     strMeasure2?: string;
+//     strMeasure3?: string;
+//     strMeasure4?: string;
+//     strMeasure5?: string;
+//     strMeasure6?: string;
+//     strMeasure7?: string;
+//     strMeasure8?: string;
+//     strMeasure9?: string;
+//     strMeasure10?: string;
+//     strMeasure11?: string;
+//     strMeasure12?: string;
+//     strMeasure13?: string;
+//     strMeasure14?: string;
+//     strMeasure15?: string;
+//     strMeasure16?: string;
+//     strMeasure17?: string;
+//     strMeasure18?: string;
+//     strMeasure19?: string;
+//     strMeasure20?: string;
+// };
 
 interface LocationState {
     state: string;
 }
 
 const Search: React.FC = () => {
-    const navigate: NavigateFunction = useNavigate();
+    // const navigate: NavigateFunction = useNavigate();
     const location = useLocation();
     const { state } = location as LocationState;
 
@@ -86,13 +88,15 @@ const Search: React.FC = () => {
         return <Error />;
     }
 
-    const handleNavigateToResult = (
-        event: React.MouseEvent<HTMLDivElement>,
-        idMeal: string
-    ): void => {
-        event.preventDefault();
-        navigate('/result', { state: idMeal });
-    };
+    console.log(data);
+
+    // const handleNavigateToResult = (
+    //     event: React.MouseEvent<HTMLDivElement>,
+    //     idMeal: string
+    // ): void => {
+    //     event.preventDefault();
+    //     navigate('/result', { state: idMeal });
+    // };
 
     return (
         <div className="px-6 md:px-9 lg:px-12 my-6 max-w-7xl m-auto">
@@ -109,7 +113,7 @@ const Search: React.FC = () => {
                         &nbsp;found for &apos;{state}&apos;
                     </p>
                 )}
-                <div className="flex flex-col md:flex-row md:flex-wrap md:justify-between">
+                {/* <div className="flex flex-col md:flex-row md:flex-wrap md:justify-between">
                     {data &&
                         data.map((item: Recipe) => {
                             let ingredientsArray = [];
@@ -192,7 +196,7 @@ const Search: React.FC = () => {
                                 </div>
                             );
                         })}
-                </div>
+                </div> */}
                 {!data && (
                     <div>
                         <p className="py-10 font-body2_font text-center text-lg">

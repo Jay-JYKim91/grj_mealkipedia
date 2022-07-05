@@ -102,9 +102,8 @@ const TodaysRecipe: React.FC<TodaysRecipeProp> = ({ divStyle }) => {
                             .split(/\r?\n/)
                             .map((sentence: string) => (
                                 <p
-                                    key={sentence}
-                                    className="text-lg text-slate-600 mb-1"
-                                >
+                                    key={Date.now()}
+                                    className="text-lg text-slate-600 mb-1">
                                     {sentence}
                                 </p>
                             ))}

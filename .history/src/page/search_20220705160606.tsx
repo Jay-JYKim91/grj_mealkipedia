@@ -86,6 +86,8 @@ const Search: React.FC = () => {
         return <Error />;
     }
 
+    console.log(data);
+
     const handleNavigateToResult = (
         event: React.MouseEvent<HTMLDivElement>,
         idMeal: string
