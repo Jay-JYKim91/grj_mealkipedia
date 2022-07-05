@@ -17,8 +17,7 @@ const TodaysRecipe: React.FC<TodaysRecipeProp> = ({ divStyle }) => {
     const navigate: NavigateFunction = useNavigate();
 
     const { isLoading, isError, data } = useQuery('getDefaultRecipe', () =>
-        apiMeals.getDefaultRecipe()
-    );
+        apiMeals.getDefaultRecipe());
 
     if (isLoading) {
         return <Loading />;

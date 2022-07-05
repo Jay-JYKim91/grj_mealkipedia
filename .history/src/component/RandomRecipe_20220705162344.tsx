@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useQuery } from 'react-query';
 import { NavigateFunction, useNavigate } from 'react-router-dom';
 import * as apiMeals from '../services/mealDB';
@@ -16,8 +16,9 @@ type TodaysRecipeProp = {
 const TodaysRecipe: React.FC<TodaysRecipeProp> = ({ divStyle }) => {
     const navigate: NavigateFunction = useNavigate();
 
-    const { isLoading, isError, data } = useQuery('getDefaultRecipe', () =>
-        apiMeals.getDefaultRecipe()
+    const { isLoading, isError, data } = useQuery(
+        'getDefaultRecipe',
+        () => apiMeals.getDefaultRecipe()
     );
 
     if (isLoading) {

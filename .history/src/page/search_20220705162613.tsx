@@ -195,7 +195,7 @@ const Search: React.FC = () => {
                 </div>
                 {!data && (
                     <div>
-                        <p className="pt-20 pb-12 font-body2_font text-center text-xl">
+                        <p className="py-12 font-body2_font text-center text-xl">
                             No results found for &apos;{state}&apos;
                         </p>
                         <TodaysRecipe divStyle="lg:py-12" />
