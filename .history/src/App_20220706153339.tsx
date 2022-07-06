@@ -20,7 +20,7 @@ const App: React.FC = () => {
                     </button>
                 </div>
             </header>
-            <main className="flex-1 px-6 md:px-9 lg:px-12">
+            <main className="flex-1 max-w-7xl m-auto">
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="search" element={<Search />} />
