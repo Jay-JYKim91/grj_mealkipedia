@@ -76,6 +76,9 @@ const Search: React.FC = () => {
 
     useEffect(() => {
         refetch();
+        useQuery('searchRecipeByQuery', () => 
+            apiMeals.searchRecipeByQuery(state)
+        );
     }, [state]);
 
     if (isLoading) {
@@ -149,6 +152,21 @@ const Search: React.FC = () => {
                                                 content={item.strArea}
                                                 type="area"
                                             />
+                                            {/* {item.strTags &&
+                                                item.strTags
+                                                    .split(',')
+                                                    .map(
+                                                        (tag: string) =>
+                                                            tag && (
+                                                                <Tag
+                                                                    type="restTag"
+                                                                    content={
+                                                                        tag
+                                                                    }
+                                                                    key={tag}
+                                                                />
+                                                            )
+                                                    )} */}
                                         </div>
                                         <p className="font-body1_font text-2xl pb-12">
                                             {item.strMeal}
