@@ -95,7 +95,7 @@ const Search: React.FC = () => {
     };
 
     return (
-        <div className="max-w-7xl m-auto my-6 px-6 md:px-9 lg:px-12">
+        <div className="max-w-7xl m-auto my-6 px-6 md:px-9 lg:px-0">
             <SearchBar
                 divStyle="flex justify-center"
                 inputStyle="p-1 lg:p-4 text-l font-body1_font rounded-l-lg border-2 border-gray-300 w-full"
