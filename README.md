@@ -1,7 +1,6 @@
 # Mealkipedia_Recipe APP
 
 - [설계](#설계)
-- [기능](#기능)
 - [구현](#구현)
 - [트러블 슈팅](#트러블-슈팅)
 - [학습한 내용](#학습한-내용)
@@ -32,10 +31,13 @@
 - Recipe page
   
   <img src="https://user-images.githubusercontent.com/69047256/174443779-d10fafdb-4ad5-43ad-82f7-de9dafe88e04.PNG" width="75%"/>
+- Category page
+  
+  <img src="https://user-images.githubusercontent.com/69047256/179733392-25892d73-eb63-4ece-8504-09c2c9366ce7.jpg" width="75%"/>
 
 ---
 
-## 기능
+## 구현
 
 ### 반응형
 #### Mobile
