@@ -63,14 +63,15 @@ const Category: React.FC = () => {
         return <Error />;
     }
 
+    console.log(selectedCategory);
+
     return (
         <div className="max-w-7xl m-auto my-6 px-6 md:px-9 lg:px-12">
             <div className="overflow-x-scroll mb-4">
                 <ul className="flex ">
                     {categories.data.map((category: FetchedCategory) => {
                         const focused =
-                            selectedCategory.toLowerCase() ===
-                            category.strCategory.toLowerCase();
+                            selectedCategory === category.strCategory;
                         return (
                             <li
                                 key={category.strCategory}

@@ -8,11 +8,8 @@ type TagProps = {
     focused?: boolean;
 };
 
-const CategoryTag = ({ content, clickable, focused }: TagProps) => {
+const CategoryTag = ({ content, clickable }: TagProps) => {
     const navigate = useNavigate();
-    const style = focused
-        ? 'border-indigo-700 bg-indigo-700 text-indigo-300'
-        : 'border-indigo-300 bg-indigo-300 text-indigo-700';
 
     const handleClick = () => {
         if (clickable) {
@@ -24,7 +21,7 @@ const CategoryTag = ({ content, clickable, focused }: TagProps) => {
 
     return (
         <span
-            className={`p-2 py-px mb-2 mr-2 border-2 rounded-3xl font-body2_font ${style}`}
+            className="p-2 py-px mb-2 mr-2 border-2 rounded-3xl font-body2_font border-indigo-300 bg-indigo-300 text-indigo-700"
             onClick={handleClick}
         >
             {content}

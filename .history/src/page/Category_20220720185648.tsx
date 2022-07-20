@@ -68,9 +68,6 @@ const Category: React.FC = () => {
             <div className="overflow-x-scroll mb-4">
                 <ul className="flex ">
                     {categories.data.map((category: FetchedCategory) => {
-                        const focused =
-                            selectedCategory.toLowerCase() ===
-                            category.strCategory.toLowerCase();
                         return (
                             <li
                                 key={category.strCategory}
@@ -83,7 +80,6 @@ const Category: React.FC = () => {
                                 <Tag
                                     type="category"
                                     content={category.strCategory}
-                                    focused={focused}
                                 />
                             </li>
                         );

@@ -69,8 +69,7 @@ const Category: React.FC = () => {
                 <ul className="flex ">
                     {categories.data.map((category: FetchedCategory) => {
                         const focused =
-                            selectedCategory.toLowerCase() ===
-                            category.strCategory.toLowerCase();
+                            selectedCategory === category.strCategory;
                         return (
                             <li
                                 key={category.strCategory}

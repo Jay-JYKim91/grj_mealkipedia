@@ -68,13 +68,10 @@ const Category: React.FC = () => {
             <div className="overflow-x-scroll mb-4">
                 <ul className="flex ">
                     {categories.data.map((category: FetchedCategory) => {
-                        const focused =
-                            selectedCategory.toLowerCase() ===
-                            category.strCategory.toLowerCase();
                         return (
                             <li
                                 key={category.strCategory}
-                                className="my-2 cursor-pointer"
+                                className="my-2 cursor-pointer bg-black"
                                 role="presentation"
                                 onClick={() =>
                                     setSelectedCategory(category.strCategory)
@@ -83,7 +80,6 @@ const Category: React.FC = () => {
                                 <Tag
                                     type="category"
                                     content={category.strCategory}
-                                    focused={focused}
                                 />
                             </li>
                         );
