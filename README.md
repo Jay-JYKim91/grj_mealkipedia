@@ -39,22 +39,33 @@
 
 ## 구현
 
-### 반응형
+### Responsive design
 
-| Home                 | Search               | 
+#### Home
+| Desktop                 | Mobile               | 
 | -------------------- | -------------------- | 
-| <img src="https://user-images.githubusercontent.com/69047256/177495380-75de58ac-11df-40df-8c4b-99b6944db06c.png" width="100%"/> | <img src="https://user-images.githubusercontent.com/69047256/177495393-cd2f0900-02e3-46ea-86ea-bd7e9c396cab.png" width="100%"/> |
+| ![](./docs/desktop_home.png) | ![](./docs/mobile_home.png) |
 
-
-| Category         | Result              | 
+#### Search
+| Desktop                 | Mobile               | 
 | -------------------- | -------------------- | 
-| <img src="https://user-images.githubusercontent.com/69047256/179960879-f7fa0f45-9cca-4bd5-be6a-0f7cea5c368b.png" width="80%"/> | <img src="https://user-images.githubusercontent.com/69047256/177495407-655fcbb6-187b-4db4-83d6-eb1453816678.png" width="200%"/> |
+| ![](./docs/desktop_search.png) | ![](./docs/mobile_search.png) |
 
+#### Category
+| Desktop                 | Mobile               | 
+| -------------------- | -------------------- | 
+| ![](./docs/desktop_category.png) | ![](./docs/mobile_category.png) |
+
+#### Result
+| Desktop                 | Mobile               | 
+| -------------------- | -------------------- | 
+| ![](./docs/desktop_result.png) | ![](./docs/mobile_result.png) |
 
 ### Search recipes
 <img src="https://user-images.githubusercontent.com/69047256/177498987-1c5344b3-ad4d-4b98-878c-87396c1c077c.gif" width="75%"/>
 
 ### Filter recipes by category
+<img src="./docs/filter_research.gif" width="75%"/>
 
 ---
 
