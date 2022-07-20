@@ -6,7 +6,7 @@ import {
     useNavigate,
     Link,
 } from 'react-router-dom';
-import Category from './page/Catetory';
+import Catetory from './page/Catetory';
 import Home from './page/Home';
 import Result from './page/Result';
 import Search from './page/Search';
@@ -21,20 +21,18 @@ const App: React.FC = () => {
     return (
         <div className="app">
             <header className="px-6 md:px-9 lg:px-12 py-2 shadow-md bg-gray-50">
-                <div className="max-w-7xl m-auto flex justify-between items-center">
+                <div className="max-w-7xl m-auto flex justify-between">
                     <button type="button" onClick={navigateHome}>
                         <img src="/logo.png" alt="logo" width="160" />
                     </button>
-                    <Link to="/category" className="text-xl font-body1_font">
-                        CATEGORY
-                    </Link>
+                    <Link to="/category">Category</Link>
                 </div>
             </header>
             <main className="flex-1">
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="search" element={<Search />} />
-                    <Route path="category" element={<Category />} />
+                    <Route path="category" element={<Catetory />} />
                     <Route path="result" element={<Result />} />
                 </Routes>
             </main>

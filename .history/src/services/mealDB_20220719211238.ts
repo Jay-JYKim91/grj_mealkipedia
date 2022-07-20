@@ -39,13 +39,5 @@ export async function getCategories() {
         `https://www.themealdb.com/api/json/v1/1/list.php?c=list`
     );
 
-    return data['meals'];
-}
-
-export async function getFilteredRecipes(category: string) {
-    const { data } = await axios.get(
-        `https://www.themealdb.com/api/json/v1/1/filter.php?c=${category}`
-    );
-
-    return data['meals'];
+    return data['meals'][0];
 }

@@ -6,7 +6,7 @@ import {
     useNavigate,
     Link,
 } from 'react-router-dom';
-import Category from './page/Catetory';
+import Category from './page/Category';
 import Home from './page/Home';
 import Result from './page/Result';
 import Search from './page/Search';
