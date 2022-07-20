@@ -45,14 +45,12 @@ const Category: React.FC = () => {
     }, [selectedCategory]);
 
     useEffect(() => {
+        console.log(itemCount);
+        console.log(filteredRecipes.data);
         if (filteredRecipes.data && filteredRecipes.data.length > itemCount) {
             setData(filteredRecipes.data.slice(0, itemCount));
-        } else if (
-            filteredRecipes.data &&
-            filteredRecipes.data.length <= itemCount
-        ) {
-            setData(filteredRecipes.data);
         }
+        console.log(data);
     }, [itemCount]);
 
     if (categories.isLoading || filteredRecipes.isLoading) {

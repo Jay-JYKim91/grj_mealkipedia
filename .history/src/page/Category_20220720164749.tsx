@@ -47,12 +47,8 @@ const Category: React.FC = () => {
     useEffect(() => {
         if (filteredRecipes.data && filteredRecipes.data.length > itemCount) {
             setData(filteredRecipes.data.slice(0, itemCount));
-        } else if (
-            filteredRecipes.data &&
-            filteredRecipes.data.length <= itemCount
-        ) {
-            setData(filteredRecipes.data);
         }
+        console.log(data);
     }, [itemCount]);
 
     if (categories.isLoading || filteredRecipes.isLoading) {
