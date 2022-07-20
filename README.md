@@ -40,20 +40,21 @@
 ## 구현
 
 ### 반응형
-#### Mobile
 
-| Home                 | Search               | Result               |
-| -------------------- | -------------------- | -------------------- |
-| <img align=top src="https://user-images.githubusercontent.com/69047256/177492939-b2671b65-24bd-47ba-a8b7-c64e07bb3216.png" width="100%"/> | <img src="https://user-images.githubusercontent.com/69047256/177492950-1eb13b46-1957-4a23-bcb1-b0b674c7ee31.png" width="100%"/> | <img src="https://user-images.githubusercontent.com/69047256/177492961-518ba014-3ea0-4cf7-8515-11b4c6417b23.png" width="100%"/> |
+| Home                 | Search               | 
+| -------------------- | -------------------- | 
+| <img src="https://user-images.githubusercontent.com/69047256/177495380-75de58ac-11df-40df-8c4b-99b6944db06c.png" width="100%"/> | <img src="https://user-images.githubusercontent.com/69047256/177495393-cd2f0900-02e3-46ea-86ea-bd7e9c396cab.png" width="100%"/> |
 
-#### Desktop
 
-| Home                 | Search               | Result               |
-| -------------------- | -------------------- | -------------------- |
-| <img src="https://user-images.githubusercontent.com/69047256/177495380-75de58ac-11df-40df-8c4b-99b6944db06c.png" width="100%"/> | <img src="https://user-images.githubusercontent.com/69047256/177495393-cd2f0900-02e3-46ea-86ea-bd7e9c396cab.png" width="100%"/> | <img src="https://user-images.githubusercontent.com/69047256/177495407-655fcbb6-187b-4db4-83d6-eb1453816678.png" width="100%"/> |
+| Category         | Result              | 
+| -------------------- | -------------------- | 
+| <img src="https://user-images.githubusercontent.com/69047256/179960879-f7fa0f45-9cca-4bd5-be6a-0f7cea5c368b.png" width="80%"/> | <img src="https://user-images.githubusercontent.com/69047256/177495407-655fcbb6-187b-4db4-83d6-eb1453816678.png" width="200%"/> |
 
-### 레시피 검색
+
+### Search recipes
 <img src="https://user-images.githubusercontent.com/69047256/177498987-1c5344b3-ad4d-4b98-878c-87396c1c077c.gif" width="75%"/>
+
+### Filter recipes by category
 
 ---
 
