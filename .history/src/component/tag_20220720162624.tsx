@@ -40,10 +40,10 @@ const RestTag = ({ content }: TagProps) => (
     </span>
 );
 
-const checkType = (type: string, content: string, clickable: boolean) => {
+const checkType = (type: string, content: string) => {
     switch (type) {
         case 'category':
-            return <CategoryTag content={content} clickable={clickable} />;
+            return <CategoryTag content={content} />;
         case 'area':
             return <AreaTag content={content} />;
         case 'restTag':
@@ -53,11 +53,10 @@ const checkType = (type: string, content: string, clickable: boolean) => {
     }
 };
 
-const Tag: React.FC<TagProps> = ({ type, content, clickable }) => {
+const Tag: React.FC<TagProps> = ({ type, content }) => {
     type = type!;
-    clickable = clickable!;
 
-    return <div>{checkType(type, content, clickable)}</div>;
+    return <div>{checkType(type, content)}</div>;
 };
 
 export default Tag;

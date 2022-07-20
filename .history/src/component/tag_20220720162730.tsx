@@ -11,6 +11,7 @@ const CategoryTag = ({ content, clickable }: TagProps) => {
     const navigate = useNavigate();
 
     const handleClick = () => {
+        console.log('hi');
         if (clickable) {
             navigate('/category', {
                 state: content,
@@ -55,7 +56,6 @@ const checkType = (type: string, content: string, clickable: boolean) => {
 
 const Tag: React.FC<TagProps> = ({ type, content, clickable }) => {
     type = type!;
-    clickable = clickable!;
 
     return <div>{checkType(type, content, clickable)}</div>;
 };

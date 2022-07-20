@@ -80,7 +80,7 @@ const Result: React.FC = () => {
                 <img
                     src={strMealThumb}
                     alt={strMeal}
-                    className="md:pr-4 max-w-xs max-h-xs min-w-full md:min-w-[50%] md:h-fit rounded"
+                    className="md:pr-4 max-w-xs max-h-xs min-w-full md:min-w-[50%] md:h-fit"
                 />
                 <div className="py-2 md:py-0">
                     <p className="font-body1_font text-2xl md:text-3xl py-2 md:pt-0">

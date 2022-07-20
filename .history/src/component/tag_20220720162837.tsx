@@ -11,6 +11,7 @@ const CategoryTag = ({ content, clickable }: TagProps) => {
     const navigate = useNavigate();
 
     const handleClick = () => {
+        console.log('hi');
         if (clickable) {
             navigate('/category', {
                 state: content,

@@ -4,24 +4,19 @@ import { useNavigate } from 'react-router-dom';
 type TagProps = {
     type?: string;
     content: string;
-    clickable?: boolean;
 };
 
-const CategoryTag = ({ content, clickable }: TagProps) => {
+const CategoryTag = ({ content }: TagProps) => {
     const navigate = useNavigate();
-
-    const handleClick = () => {
-        if (clickable) {
-            navigate('/category', {
-                state: content,
-            });
-        }
-    };
 
     return (
         <span
             className="p-2 py-px mb-2 mr-2 border-2 rounded-3xl font-body2_font border-indigo-300 bg-indigo-300 text-indigo-700"
-            onClick={handleClick}
+            onClick={() =>
+                navigate('/result', {
+                    state: content,
+                })
+            }
         >
             {content}
         </span>
@@ -40,10 +35,10 @@ const RestTag = ({ content }: TagProps) => (
     </span>
 );
 
-const checkType = (type: string, content: string, clickable: boolean) => {
+const checkType = (type: string, content: string) => {
     switch (type) {
         case 'category':
-            return <CategoryTag content={content} clickable={clickable} />;
+            return <CategoryTag content={content} />;
         case 'area':
             return <AreaTag content={content} />;
         case 'restTag':
@@ -53,11 +48,10 @@ const checkType = (type: string, content: string, clickable: boolean) => {
     }
 };
 
-const Tag: React.FC<TagProps> = ({ type, content, clickable }) => {
+const Tag: React.FC<TagProps> = ({ type, content }) => {
     type = type!;
-    clickable = clickable!;
 
-    return <div>{checkType(type, content, clickable)}</div>;
+    return <>{checkType(type, content)}</>;
 };
 
 export default Tag;

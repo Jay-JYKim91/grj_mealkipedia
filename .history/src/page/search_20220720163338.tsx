@@ -60,9 +60,9 @@ type Recipe = {
     strMeasure20?: string;
 };
 
-export type LocationState = {
+interface LocationState {
     state: string;
-};
+}
 
 const Search: React.FC = () => {
     const navigate: NavigateFunction = useNavigate();

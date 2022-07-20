@@ -46,8 +46,8 @@ const Result: React.FC = () => {
     return (
         <div className="px-6 md:px-9 lg:px-12 my-6 max-w-7xl m-auto">
             <h1 className="font-body1_font text-4xl">{strMeal}</h1>
-            <div className="py-2 flex flex-wrap my-2">
-                <Tag type="category" content={strCategory} clickable />
+            <div className="py-2 flex flex-wrap">
+                <Tag type="category" content={strCategory} clickable={true} />
                 <Tag type="area" content={strArea} />
                 {strTags &&
                     strTags
@@ -80,7 +80,7 @@ const Result: React.FC = () => {
                 <img
                     src={strMealThumb}
                     alt={strMeal}
-                    className="md:pr-4 max-w-xs max-h-xs min-w-full md:min-w-[50%] md:h-fit rounded"
+                    className="md:pr-4 max-w-xs max-h-xs min-w-full md:min-w-[50%] md:h-fit"
                 />
                 <div className="py-2 md:py-0">
                     <p className="font-body1_font text-2xl md:text-3xl py-2 md:pt-0">
